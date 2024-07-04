@@ -1,0 +1,25 @@
+body{
+    background-color: white;
+    color: black;
+    margin: 0;
+}
+
+.mainDiv{
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+}
+
+
+.div_up{
+    width: 100%;
+    height: 10%;
+    background-color: green;
+    display: flex;
+}
+
+.div_down{
+    width: 100%;
+    height: 90%;
+    background-color: blueviolet;
+}
