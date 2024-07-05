@@ -1,16 +1,48 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mainPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="./JS/mainPageJS.js"></script>
     <title>Finance Tracker</title>
 </head>
+
 <body>
     <div class="mainDiv">
-            <div class="div_up">
+        <div class="div_up">
+            <input type="text" id="txtSearch" placeholder="Search ...">
+            <div class="addEntry">
+                <p>+ Add Entry</p>
             </div>
-            <div class="div_down">
-            </div>
+        </div>
+        <div class="div_down">
+            <center>
+                <div style="height: 1px; width: 90%;background-color: black;" class="dividerLine"></div>
+            </center>
+            <center>
+                <div class="mainGraphDiv">
+                    <div class="mainDiv_topInfo">
+                        <h2 style="float: left;margin-left: 10%;margin-top: 46px;">Overview</h2>
+                        <select name="timeframe" id="timeframe">
+                            <option value="volvo">Data : 1 Month</option>
+                            <option value="saab">Data : 6 Months</option>
+                            <option value="mercedes">Data : 1 Year</option>
+                            <option value="audi">Data : 2 Years</option>
+                        </select>
+                    </div>
+                    <div class="mainDiv_bottonGraph">
+
+                    </div>
+                </div>
+            </center>
+        </div>
     </div>
 </body>
+
 </html>
