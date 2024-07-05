@@ -1,0 +1,78 @@
+.wrapper_info_div{
+    display: flex;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.totalIncomeContainer{
+    float: left;
+    width: 20%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+    background-color: green;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 5%;
+}
+
+.inside_divider_income{
+    height: 1px;
+    width: 90%;
+    background-color: white;
+}
+
+.totalSavedContainer{
+    margin-left: 3.3%;
+    width: 20%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+    background-color: #14248A;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.inside_divider_saved{
+    height: 1px;
+    width: 90%;
+    background-color: white;
+}
+
+.totalInvestedContainer{
+    margin-left: 3.3%;
+    width: 20%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+    background-color: #ECA400;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.inside_divider_invested{
+    height: 1px;
+    width: 90%;
+    background-color: white;
+}
+
+.totalExpensesContainer{
+    margin-left: 3.3%;
+    width: 20%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+    background-color: #9E0031;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.inside_divider_expenses{
+    height: 1px;
+    width: 90%;
+    background-color: white;
+}

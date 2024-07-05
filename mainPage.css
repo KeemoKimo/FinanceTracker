@@ -1,9 +1,17 @@
 body {
-    background-color: white;
+    background-color: rgb(213, 211, 211);
     color: black;
     font-size: 18px;
     margin: 0;
     font-family: "poppins";
+}
+
+.dividerLine{
+    width: 90%;
+    height: 1px;
+    background-color: black;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #myChart {
@@ -40,7 +48,7 @@ body {
     margin-left: 10%;
     margin-top: 15px;
     float: left;
-    background-color: rgb(246, 233, 233);
+    background-color: white;
 }
 
 .addEntry {
@@ -74,7 +82,7 @@ body {
 .mainGraphDiv {
     width: 90%;
     height: auto;
-    background-color: rgb(246, 233, 233);
+    background-color: white;
     margin-top: 30px;
     border-radius: 15px;
     box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
@@ -101,12 +109,29 @@ body {
     height: 40px;
     border-radius: 10px;
     font-family: "poppins";
-    border: none;
+    border: 1px solid black;
     padding-left: 10px;
+    /* background-color: green;
+    color: white; */
 }
 
 #lblAmount {
     float: left;
+    font-weight: 300;
     margin-left: 10%;
-    margin-top: 46px;
+    margin-top: 40px;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }
+
+
+#lblAmount:hover {
+    cursor: pointer;
+    color: green;
+    transition: .5s;
+}
+
