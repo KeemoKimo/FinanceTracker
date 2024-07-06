@@ -58,7 +58,7 @@ body {
     width: 160px;
     height: 40px;
     padding: 10px;
-    background-color: green;
+    background-color: #ADF6B1;
     box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
     display: flex;
     border-radius: 15px;
@@ -76,7 +76,7 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: white;
+    color: black;
 }
 
 .mainGraphDiv {
