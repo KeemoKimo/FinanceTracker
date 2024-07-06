@@ -1,11 +1,17 @@
 <html lang="en">
 
 <head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mainPage.css">
     <link rel="stylesheet" href="cssInfoDiv.css ">
     <link rel="stylesheet" href="tableCSS.css">
+    <link rel="stylesheet" href="AddData.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -59,7 +65,7 @@
                     <div class="inside_divider_invested"></div>
                     <h2 style="font-weight: 300;">$ Invested</h2>
                 </div>
-                
+
             </div>
             <center>
                 <div style="height: 1px; width: 90%;background-color: black;" class="dividerLine"></div>
@@ -67,7 +73,7 @@
             <center>
                 <div class="div_up">
                     <input type="text" id="txtSearch" placeholder="Search ...">
-                    <div class="addEntry">
+                    <div id="addEntry" onclick="scrollToView()">
                         <p>+ Add Entry</p>
                     </div>
                 </div>
@@ -80,8 +86,8 @@
                     <table class="tblData" cellspacing="0">
                         <colgroup>
                             <col style="background-color: #DFBBB1;" />
-                            <col style="background-color: #ADF6B1;"/>
-                            <col style="background-color: #FF4B3E;"/>
+                            <col style="background-color: #ADF6B1;" />
+                            <col style="background-color: #FF4B3E;" />
                             <col style="background-color: #F8F4F9;" />
                         </colgroup>
                         <tr>
@@ -97,6 +103,45 @@
                             <td>$ balance</td>
                         </tr>
                     </table>
+                </div>
+            </center>
+            <center>
+                <div id="addDataDiv">
+                    <p style="padding-top: 50px;font-size: 21px;">Time Range</p>
+                    <div class="dateRangeDiv">
+                        <input type="date" id="dateStart">
+                        <p style="font-size: 21px;margin-left: 50px;margin-right: 50px;"> to </p>
+                        <input type="date" id="dateEnd">
+                    </div>
+                    <div class="addIncome">
+                        <p style="font-size: 21px;">Add Income</p>
+                        <div class="textbox_income">
+                            <input type="text" placeholder="Enter total income...." id="txtIncome">
+                            <p>$</p>
+                        </div>
+                    </div>
+                    <div class="addExpenses">
+                        <p style="font-size: 21px;">Add Expenses</p>
+                        <div class="textbox_expenses">
+                            <input type="text" placeholder="Enter total expenses...." id="txtExpenses">
+                            <p>$</p>
+                        </div>
+                    </div>
+                    <div class="addSavings">
+                        <p style="font-size: 21px;">Add Savings</p>
+                        <div class="textbox_savings">
+                            <input type="text" placeholder="Enter new saving amount...." id="txtSavings">
+                            <p>$</p>
+                        </div>
+                    </div>
+                    <div class="addInvested">
+                        <p style="font-size: 21px;">Add Invested</p>
+                        <div class="textbox_invested">
+                            <input type="text" placeholder="Enter new investment amount...." id="txtInvested">
+                            <p>$</p>
+                        </div>
+                    </div>
+                    <button id="btnAddEntry">Add Entry</button>
                 </div>
             </center>
         </div>

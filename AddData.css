@@ -1,0 +1,127 @@
+#addDataDiv{
+    width: 50%;
+    height: auto;
+    background-color: red;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+}
+
+.dateRangeDiv{
+    display: flex;
+    background-color: blue;
+    margin: 0 auto;
+}
+
+.dateRangeDiv input{
+    font-size: 18px;
+    font-family: "poppins";
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+}
+
+#txtIncome{
+    width: 400px;
+    height: 50px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+}
+
+.textbox_income{
+    display: flex;
+    background-color: yellow;
+}
+
+.textbox_income p{
+    margin-top: 12px;
+    margin-left: 20px;
+    scale: 2;
+}
+
+#txtExpenses{
+    width: 400px;
+    height: 50px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+}
+
+.textbox_expenses{
+    display: flex;
+    background-color: yellow;
+}
+
+.textbox_expenses p{
+    margin-top: 12px;
+    margin-left: 20px;
+    scale: 2;
+}
+
+#txtSavings{
+    width: 400px;
+    height: 50px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+}
+
+.textbox_savings{
+    display: flex;
+    background-color: yellow;
+}
+
+.textbox_savings p{
+    margin-top: 12px;
+    margin-left: 20px;
+    scale: 2;
+}
+
+#txtInvested{
+    width: 400px;
+    height: 50px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+}
+
+.textbox_invested{
+    display: flex;
+    background-color: yellow;
+}
+
+.textbox_invested p{
+    margin-top: 12px;
+    margin-left: 20px;
+    scale: 2;
+}
+
+#btnAddEntry{
+    margin-top: 50px;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    font-family: "poppins";
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(163, 162, 162, 0.526);
+    background-color: green;
+    color: white;
+    margin-bottom: 50px;
+}
+
+#btnAddEntry:hover{
+    cursor: pointer;
+    opacity: 0.9;
+    transition: .8s;
+}
