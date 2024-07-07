@@ -105,43 +105,44 @@
                     </table>
                 </div>
             </center>
+            <div style="height: 50px;"></div>
             <center>
                 <div id="addDataDiv">
                     <p style="padding-top: 50px;font-size: 21px;">Time Range</p>
                     <div class="dateRangeDiv">
-                        <input type="date" id="dateStart">
+                        <input type="date" id="dateStart" required>
                         <p style="font-size: 21px;margin-left: 50px;margin-right: 50px;"> to </p>
-                        <input type="date" id="dateEnd">
+                        <input type="date" id="dateEnd" required>
                     </div>
                     <div class="addIncome">
                         <p style="font-size: 21px;">Add Income</p>
                         <div class="textbox_income">
-                            <input type="text" placeholder="Enter total income...." id="txtIncome">
+                            <input type="number" placeholder="Enter total income...." id="txtIncome" required>
                             <p>$</p>
                         </div>
                     </div>
                     <div class="addExpenses">
                         <p style="font-size: 21px;">Add Expenses</p>
                         <div class="textbox_expenses">
-                            <input type="text" placeholder="Enter total expenses...." id="txtExpenses">
+                            <input type="number" placeholder="Enter total expenses...." id="txtExpenses" required>
                             <p>$</p>
                         </div>
                     </div>
                     <div class="addSavings">
                         <p style="font-size: 21px;">Add Savings</p>
                         <div class="textbox_savings">
-                            <input type="text" placeholder="Enter new saving amount...." id="txtSavings">
+                            <input type="number" placeholder="Enter new saving amount...." id="txtSavings" required>
                             <p>$</p>
                         </div>
                     </div>
                     <div class="addInvested">
                         <p style="font-size: 21px;">Add Invested</p>
                         <div class="textbox_invested">
-                            <input type="text" placeholder="Enter new investment amount...." id="txtInvested">
+                            <input type="number" placeholder="Enter new investment amount...." id="txtInvested" required>
                             <p>$</p>
                         </div>
                     </div>
-                    <button id="btnAddEntry">Add Entry</button>
+                    <button id="btnAddEntry" onclick="addEntry()">Add Entry</button>
                 </div>
             </center>
         </div>
