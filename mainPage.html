@@ -157,7 +157,8 @@
                     <div class="addInvested">
                         <p style="font-size: 21px;">Add Invested</p>
                         <div class="textbox_invested">
-                            <input type="number" placeholder="Enter new investment amount...." id="txtInvested" required>
+                            <input type="number" placeholder="Enter new investment amount...." id="txtInvested"
+                                required>
                             <p>$</p>
                         </div>
                     </div>
@@ -165,26 +166,63 @@
                 </div>
             </center>
         </div>
+        <p onclick="GetCellValues()">Hello</p>
     </div>
 
     <script>
-        const xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
 
-        new Chart("myChart", {
+        var arrIncome = []
+        var arrExpenses = []
+        var arrBalances = []
+        var arrSavings = []
+        var arrInvested = []
+        var arrTimeFrame = []
+
+        function GetCellValues() {
+            var table = document.getElementById('tblData');
+            for (var i = 1; i < table.rows.length - 1; i++) {
+                var individualTimeFrame = table.rows[i].cells[0].innerHTML
+                var individualIncome = Number(table.rows[i].cells[1].innerHTML.replace("$", ""))
+                var individualExpenses = Number(table.rows[i].cells[2].innerHTML.replace("$", ""))
+                var individualBalance = ((table.rows[i].cells[3].innerHTML.replace("$", "")).replace("<b>", "")).replace("</b>", "")
+                arrIncome.push(individualIncome)
+                arrExpenses.push(individualExpenses)
+                arrBalances.push(individualBalance)
+                arrTimeFrame.push(individualTimeFrame)
+            }
+            var tableSavings = document.getElementById('tblSavings')
+            for (var i = 1; i < tableSavings.rows.length - 1; i++) {
+                var individualSavings = Number(tableSavings.rows[i].cells[1].innerHTML.replace("$", ""))
+                var individualInvested = Number(tableSavings.rows[i].cells[2].innerHTML.replace("$", ""))
+                arrSavings.push(individualSavings)
+                arrInvested.push(individualInvested)
+            }
+            myChart.data.labels = arrTimeFrame.reverse()
+            myChart.update()
+        }
+
+
+        var xValues = [100, 200, 300, 400, 500];
+
+        var myChart = new Chart("myChart", {
             type: "line",
             data: {
                 labels: xValues,
                 datasets: [{
-                    data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
-                    borderColor: "red",
+                    data: arrIncome,
+                    borderColor: "#ADF6B1",
                     fill: false
                 }, {
-                    data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
-                    borderColor: "green",
+                    data: arrExpenses,
+                    borderColor: "#FF4B3E",
                     fill: false
                 }, {
-                    data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
-                    borderColor: "blue",
+                    data: arrSavings,
+                    borderColor: "#E9D985",
+                    fill: false
+                }, {
+                    data: arrInvested,
+                    borderColor: "#92DCE5",
                     fill: false
                 }]
             },
