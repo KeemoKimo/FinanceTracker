@@ -8,6 +8,18 @@ function scrollToView() {
     document.getElementById("addDataDiv").scrollIntoView()
 }
 
+function switchToSavingsView(){
+    if(document.getElementById("pSwitchTable").innerHTML == "Switch to Saving/Investing View"){
+        document.getElementById("pSwitchTable").innerHTML = "Switch to Income/Expenses View"
+        document.getElementById("tblData").style.display = "none"
+        document.getElementById("tblSavings").style.display = "table"
+    }else{
+        document.getElementById("pSwitchTable").innerHTML = "Switch to Saving/Investing View"
+        document.getElementById("tblData").style.display = "table"
+        document.getElementById("tblSavings").style.display = "none"
+
+    }
+}
 
 function insertTableData(dateStart, dateEnd, income, expenses, savings, invested){
     var table = document.getElementById("tblData")
@@ -19,12 +31,21 @@ function insertTableData(dateStart, dateEnd, income, expenses, savings, invested
     cellDate.innerHTML = dateStart + " to " + dateEnd
     cellIncome.innerHTML = "$ " + income
     cellExpenses.innerHTML = "$ " + expenses
-    cellBalance.innerHTML = "<b>$ " + (Number(income) - Number(expenses)) + "</b>"
+    cellBalance.innerHTML = "<b>$ " + (Number(income) - Number(expenses)).toFixed(2) + "</b>"
     if((Number(income) - Number(expenses)) > 0){
         row.style.background = "#ADF6B1"
     }else if((Number(income) - Number(expenses)) < 0){
         row.style.background = "#FF4B3E"
     }
+    //Insert value for savings / investing table
+    var tblSavings = document.getElementById("tblSavings")
+    var rowSavings = tblSavings.insertRow(1)
+    var cellDateSavings = rowSavings.insertCell(0)
+    var cellSavings = rowSavings.insertCell(1)
+    var cellInvested = rowSavings.insertCell(2)
+    cellDateSavings.innerHTML = dateStart + " to " + dateEnd
+    cellSavings.innerHTML = "$ " + savings
+    cellInvested.innerHTML = "$ " + invested
 }
 
 function addEntry() {
@@ -41,6 +62,7 @@ function addEntry() {
             alert("Start date cannot be bigger than end date!")
         }else{
             document.getElementById("tr_Default").style.display = "none"
+            document.getElementById("tr_Default_savings").style.display = "none"
             insertTableData(dateStart, dateEnd, income, expenses, savings, invested)
             document.getElementById("addDataDiv").style.display = "none"
         }

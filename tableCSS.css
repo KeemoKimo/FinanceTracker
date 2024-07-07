@@ -11,6 +11,7 @@
     width: 100%;
     text-align: center;
     font-size: 21px;
+    display: table;
 }
 
 #tblData th{
@@ -30,5 +31,41 @@
 }
 
 .th_Balance{
+    border-radius: 0 15px 0 0;
+}
+
+#pSwitchTable{
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#pSwitchTable:hover{
+    cursor: pointer;
+    opacity: 0.9;
+    transition: .8s;
+    color: blue;
+}
+
+#tblSavings{
+    width: 100%;
+    text-align: center;
+    font-size: 21px;
+    display: none;
+}
+
+#tblSavings th{
+    width: 33%;
+}
+
+#tblSavings td{
+    font-weight: 300;
+}
+
+#tblSavings tr{
+    height: 80px;
+}
+
+.th_Invested{
     border-radius: 0 15px 0 0;
 }

@@ -79,7 +79,9 @@
                 </div>
             </center>
             <center>
-                Switch to Saving/Investing View
+                <p id="pSwitchTable" onclick="switchToSavingsView()">
+                    Switch to Saving/Investing View
+                </p>
             </center>
             <center>
                 <div class="divTables">
@@ -101,6 +103,23 @@
                             <td>$ income</td>
                             <td>$ expenses</td>
                             <td><b>$ balance</b></td>
+                        </tr>
+                    </table>
+                    <table id="tblSavings" cellspacing="0">
+                        <colgroup>
+                            <col style="background-color: #DFBBB1;" />
+                            <col style="background-color: #E9D985;" />
+                            <col style="background-color: #92DCE5;" />
+                        </colgroup>
+                        <tr>
+                            <th class="th_TimeRange">Time Range</th>
+                            <th class="th_Saved">Amount Saved</th>
+                            <th class="th_Invested">Amount Invested</th>
+                        </tr>
+                        <tr id="tr_Default_savings">
+                            <td>start - end</td>
+                            <td>$ saved</td>
+                            <td>$ invested</td>
                         </tr>
                     </table>
                 </div>
