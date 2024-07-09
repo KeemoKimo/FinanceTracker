@@ -20,7 +20,6 @@
     <script src="./JS/mainPageJS.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
-    <script src="./JS/graph.js"></script>
     <title>Finance Tracker</title>
 </head>
 
@@ -188,7 +187,11 @@
                 arrIncome.push(individualIncome)
                 arrExpenses.push(individualExpenses)
                 arrBalances.push(individualBalance)
-                arrTimeFrame.push(individualTimeFrame)
+                if(table.rows[i].cells[0].innerHTML.localeCompare(arrTimeFrame[i]) != 0){
+                    arrTimeFrame.push(individualTimeFrame)
+                }else{
+                    continue;
+                }
             }
             var tableSavings = document.getElementById('tblSavings')
             for (var i = 1; i < tableSavings.rows.length - 1; i++) {
@@ -197,17 +200,30 @@
                 arrSavings.push(individualSavings)
                 arrInvested.push(individualInvested)
             }
+            for(var i = 1; i<arrIncome.length;i++){
+                console.log("Income : " + arrIncome[i])
+            }
+            for(var i = 1 ; i < arrExpenses.length; i++){
+                console.log("Expenses : " + arrExpenses[i])
+            }
             myChart.data.labels = arrTimeFrame.reverse()
+            myChart.data.datasets[0].data = arrIncome.reverse()
+            myChart.data.datasets[1].data = arrExpenses.reverse()
+            myChart.data.datasets[2].data = arrSavings.reverse()
+            myChart.data.datasets[3].data = arrInvested.reverse()
+            arrTimeFrame = []
+            arrIncome = []
+            arrExpenses = []
+            arrSavings = []
+            arrInvested = []
             myChart.update()
         }
 
 
-        var xValues = [100, 200, 300, 400, 500];
-
         var myChart = new Chart("myChart", {
             type: "line",
             data: {
-                labels: xValues,
+                labels: arrTimeFrame,
                 datasets: [{
                     data: arrIncome,
                     borderColor: "#ADF6B1",
