@@ -65,6 +65,7 @@ function addEntry() {
             document.getElementById("tr_Default_savings").style.display = "none"
             insertTableData(dateStart, dateEnd, income, expenses, savings, invested)
             document.getElementById("addDataDiv").style.display = "none"
+            GetCellValues()
         }
     }
 }

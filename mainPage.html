@@ -47,22 +47,22 @@
                 <div class="totalIncomeContainer">
                     <h2>Total Income</h2>
                     <div class="inside_divider_income"></div>
-                    <h2 style="font-weight: 300;">$ Income</h2>
+                    <h2 style="font-weight: 300;" id="lblInfoIncome">$ Income</h2>
                 </div>
                 <div class="totalExpensesContainer">
                     <h2>Total Expenses</h2>
                     <div class="inside_divider_expenses"></div>
-                    <h2 style="font-weight: 300;">$ Expenses</h2>
+                    <h2 style="font-weight: 300;" id="lblInfoExpenses">$ Expenses</h2>
                 </div>
                 <div class="totalSavedContainer">
                     <h2>Total Saved</h2>
                     <div class="inside_divider_saved"></div>
-                    <h2 style="font-weight: 300;">$ Saved</h2>
+                    <h2 style="font-weight: 300;" id="lblInfoSaved">$ Saved</h2>
                 </div>
                 <div class="totalInvestedContainer">
                     <h2>Total Invested</h2>
                     <div class="inside_divider_invested"></div>
-                    <h2 style="font-weight: 300;">$ Invested</h2>
+                    <h2 style="font-weight: 300;" id="lblInfoInvested">$ Invested</h2>
                 </div>
 
             </div>
@@ -165,7 +165,6 @@
                 </div>
             </center>
         </div>
-        <p onclick="GetCellValues()">Hello</p>
     </div>
 
     <script>
@@ -176,6 +175,11 @@
         var arrSavings = []
         var arrInvested = []
         var arrTimeFrame = []
+        var totalIncome = 0
+        var totalExpenses = 0
+        var totalSaved = 0
+        var totalInvested = 0
+        var totalAmount = 0
 
         function GetCellValues() {
             var table = document.getElementById('tblData');
@@ -187,9 +191,12 @@
                 arrIncome.push(individualIncome)
                 arrExpenses.push(individualExpenses)
                 arrBalances.push(individualBalance)
-                if(table.rows[i].cells[0].innerHTML.localeCompare(arrTimeFrame[i]) != 0){
+                totalIncome += individualIncome
+                totalExpenses += individualExpenses
+                totalAmount = totalIncome - totalExpenses
+                if (table.rows[i].cells[0].innerHTML.localeCompare(arrTimeFrame[i]) != 0) {
                     arrTimeFrame.push(individualTimeFrame)
-                }else{
+                } else {
                     continue;
                 }
             }
@@ -199,13 +206,30 @@
                 var individualInvested = Number(tableSavings.rows[i].cells[2].innerHTML.replace("$", ""))
                 arrSavings.push(individualSavings)
                 arrInvested.push(individualInvested)
+                totalSaved += individualSavings
+                totalInvested += individualInvested
             }
-            for(var i = 1; i<arrIncome.length;i++){
-                console.log("Income : " + arrIncome[i])
+            // for(var i = 1; i<arrIncome.length;i++){
+            //     console.log("Income : " + arrIncome[i])
+            // }
+            // for(var i = 1 ; i < arrExpenses.length; i++){
+            //     console.log("Expenses : " + arrExpenses[i])
+            // }
+            document.getElementById("lblInfoIncome").innerHTML = "$ " + totalIncome
+            document.getElementById("lblInfoExpenses").innerHTML = "$ " + totalExpenses
+            document.getElementById("lblInfoSaved").innerHTML = "$ " + totalSaved
+            document.getElementById("lblInfoInvested").innerHTML = "$ " + totalInvested
+            if (totalAmount > 0) {
+                document.getElementById("lblAmount").style.color = "green"
+            }else{
+                document.getElementById("lblAmount").style.color = "red"
             }
-            for(var i = 1 ; i < arrExpenses.length; i++){
-                console.log("Expenses : " + arrExpenses[i])
-            }
+            document.getElementById("lblAmount").innerHTML = "$ " + totalAmount
+            // console.log("Total Income : " + totalIncome)
+            // console.log("Total Expenses : " + totalExpenses)
+            // console.log("Total Saved : " + totalSaved)
+            // console.log("Total Invested : " + totalInvested)
+
             myChart.data.labels = arrTimeFrame.reverse()
             myChart.data.datasets[0].data = arrIncome.reverse()
             myChart.data.datasets[1].data = arrExpenses.reverse()
@@ -216,6 +240,11 @@
             arrExpenses = []
             arrSavings = []
             arrInvested = []
+            totalIncome = 0
+            totalExpenses = 0
+            totalSaved = 0
+            totalInvested = 0
+            totalAmount = 0
             myChart.update()
         }
 
@@ -224,23 +253,24 @@
             type: "line",
             data: {
                 labels: arrTimeFrame,
-                datasets: [{
-                    data: arrIncome,
-                    borderColor: "#ADF6B1",
-                    fill: false
-                }, {
-                    data: arrExpenses,
-                    borderColor: "#FF4B3E",
-                    fill: false
-                }, {
-                    data: arrSavings,
-                    borderColor: "#E9D985",
-                    fill: false
-                }, {
-                    data: arrInvested,
-                    borderColor: "#92DCE5",
-                    fill: false
-                }]
+                datasets: [
+                    {
+                        data: arrIncome,
+                        borderColor: "#ADF6B1",
+                        fill: false
+                    }, {
+                        data: arrExpenses,
+                        borderColor: "#FF4B3E",
+                        fill: false
+                    }, {
+                        data: arrSavings,
+                        borderColor: "#E9D985",
+                        fill: false
+                    }, {
+                        data: arrInvested,
+                        borderColor: "#92DCE5",
+                        fill: false
+                    }]
             },
             options: {
                 legend: { display: false }
