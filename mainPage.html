@@ -229,7 +229,7 @@
             // console.log("Total Expenses : " + totalExpenses)
             // console.log("Total Saved : " + totalSaved)
             // console.log("Total Invested : " + totalInvested)
-
+            clearAddDataDiv()
             myChart.data.labels = arrTimeFrame.reverse()
             myChart.data.datasets[0].data = arrIncome.reverse()
             myChart.data.datasets[1].data = arrExpenses.reverse()

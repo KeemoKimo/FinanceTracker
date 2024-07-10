@@ -69,3 +69,12 @@ function addEntry() {
         }
     }
 }
+
+function clearAddDataDiv(){
+    document.getElementById("dateStart").value = ""
+    document.getElementById("dateEnd").value = ""
+    document.getElementById("txtIncome").value = ""
+    document.getElementById("txtExpenses").value = ""
+    document.getElementById("txtSavings").value = ""
+    document.getElementById("txtInvested").value = ""
+}
