@@ -139,3 +139,20 @@ body {
     transition: .5s;
 }
 
+.dataAmountDivWrapper{
+    display: flex;
+    width: auto;
+    float: left;
+    margin-top: 40px;
+    margin-left: 200px;
+}
+
+#dataAmount{
+    margin-left: 20px;
+    height: 40px;
+    border-radius: 15px;
+    margin-top: 10px;
+    width: 100px;
+    margin-right: 20px;
+}
+

@@ -61,11 +61,15 @@ function addEntry() {
         if(dateStart > dateEnd){
             alert("Start date cannot be bigger than end date!")
         }else{
-            document.getElementById("tr_Default").style.display = "none"
-            document.getElementById("tr_Default_savings").style.display = "none"
-            insertTableData(dateStart, dateEnd, income, expenses, savings, invested)
-            document.getElementById("addDataDiv").style.display = "none"
-            GetCellValues()
+            if(Number(income) < (Number(savings) + Number(invested))){
+                alert("Your cannot SAVE and INVEST more than your income!")
+            }else{
+                document.getElementById("tr_Default").style.display = "none"
+                document.getElementById("tr_Default_savings").style.display = "none"
+                insertTableData(dateStart, dateEnd, income, expenses, savings, invested)
+                document.getElementById("addDataDiv").style.display = "none"
+                GetCellValues()
+            }
         }
     }
 }

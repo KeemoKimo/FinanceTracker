@@ -21,6 +21,7 @@
     height: 1px;
     width: 90%;
     background-color: black;
+    margin-left: 20px;
 }
 
 .totalSavedContainer{
@@ -39,6 +40,7 @@
     height: 1px;
     width: 90%;
     background-color: black;
+    margin-left: 20px;
 }
 
 .totalInvestedContainer{
@@ -57,6 +59,7 @@
     height: 1px;
     width: 90%;
     background-color: black;
+    margin-left: 20px;
 }
 
 .totalExpensesContainer{
@@ -75,4 +78,5 @@
     height: 1px;
     width: 90%;
     background-color: black;
+    margin-left: 20px;
 }
