@@ -19,6 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <script src="./JS/mainPageJS.js"></script>
+    <script src="./JS/diff_payPeriod.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
     <title>Finance Tracker</title>
@@ -30,15 +31,15 @@
         <div id="payPeriod">
             <h1 style="text-align: center;margin-top: 10%;margin-bottom: 5%;">How often do you get paid?</h1>
                 <div id="optionsPay">
-                    <div id="weekly">
+                    <div id="weekly" onclick="weeklyPay()">
                         <img src="./Img/weekly.png" alt="">
                         <h2 style="text-align: center;font-weight: 400;">Weekly</h2>
                     </div>
-                    <div id="bi_weekly">
+                    <div id="bi_weekly" onclick="bi_weeklyPay()">
                         <img src="./Img/biweekly.png" alt="">
                         <h2 style="text-align: center;font-weight: 400;">Bi-Weekly</h2>
                     </div>
-                    <div id="monthly">
+                    <div id="monthly" onclick="monthlyPay()">
                         <img src="./Img/monthly.png" alt="">
                         <h2 style="text-align: center;font-weight: 400;">Monthly</h2>
                     </div>
@@ -46,6 +47,7 @@
         </div>
 
         <div class="div_down">
+            <h1 id="textTest">s</h1>
             <center>
                 <div class="mainGraphDiv">
                     <div class="mainDiv_topInfo">
