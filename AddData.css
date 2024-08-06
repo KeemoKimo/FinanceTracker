@@ -125,3 +125,8 @@
     opacity: 0.9;
     transition: .8s;
 }
+
+#dateStart{
+    padding: 20px;
+    margin-left: 21%;
+}

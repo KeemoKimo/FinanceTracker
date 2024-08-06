@@ -29,7 +29,7 @@
     <div class="mainDiv">
 
         <div id="payPeriod">
-            <h1 style="text-align: center;margin-top: 10%;margin-bottom: 5%;">How often do you get paid?</h1>
+            <h1 style="text-align: center;padding-top: 10%;margin-bottom: 5%;">How often do you get paid?</h1>
                 <div id="optionsPay">
                     <div id="weekly" onclick="weeklyPay()">
                         <img src="./Img/weekly.png" alt="">
@@ -44,10 +44,11 @@
                         <h2 style="text-align: center;font-weight: 400;">Monthly</h2>
                     </div>
                 </div>
+                <p id="text_below">please select one option to continue</p>
         </div>
 
         <div class="div_down">
-            <h1 id="textTest">s</h1>
+            <p id="textTest" style="display: none;">s</p>
             <center>
                 <div class="mainGraphDiv">
                     <div class="mainDiv_topInfo">
@@ -141,11 +142,10 @@
             <div style="height: 50px;"></div>
             <center>
                 <div id="addDataDiv">
-                    <p style="padding-top: 50px;font-size: 21px;">Time Range</p>
+                    <h3 id="txtTimelength" style="padding-top: 5%;"></h3>
+                    <p style="padding-top: 50px;font-size: 21px;" id="txtFirstPay">First Pay Day</p>
                     <div class="dateRangeDiv">
                         <input type="date" id="dateStart" required>
-                        <p style="font-size: 21px;margin-left: 50px;margin-right: 50px;"> to </p>
-                        <input type="date" id="dateEnd" required>
                     </div>
                     <div class="addIncome">
                         <p style="font-size: 21px;">Add Income</p>
@@ -228,8 +228,8 @@
             // for(var i = 1; i<arrIncome.length;i++){
             //     console.log("Income : " + arrIncome[i])
             // }
-            // for(var i = 1 ; i < arrExpenses.length; i++){
-            //     console.log("Expenses : " + arrExpenses[i])
+            // for(var i = 1 ; i < arrTimeFrame.length; i++){
+            //     console.log("tf : " + arrTimeFrame[i])
             // }
             document.getElementById("lblInfoIncome").innerHTML = "$ " + totalIncome
             document.getElementById("lblInfoExpenses").innerHTML = "$ " + totalExpenses
@@ -241,10 +241,6 @@
                 document.getElementById("lblAmount").style.color = "red"
             }
             document.getElementById("lblAmount").innerHTML = "$ " + totalAmount
-            // console.log("Total Income : " + totalIncome)
-            // console.log("Total Expenses : " + totalExpenses)
-            // console.log("Total Saved : " + totalSaved)
-            // console.log("Total Invested : " + totalInvested)
             clearAddDataDiv()
             myChart.data.labels = arrTimeFrame.reverse()
             myChart.data.datasets[0].data = arrIncome.reverse()
