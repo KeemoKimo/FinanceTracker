@@ -8,6 +8,7 @@ function searchFunction() {
 
 function scrollToView() {
     document.getElementById("addDataDiv").style.display = "block"
+    document.getElementById("statsDivMain").style.display = "none"
     document.getElementById("addDataDiv").scrollIntoView()
     if (totalAddCounter != 0) {
         document.getElementById("txtFirstPay").innerHTML = "Current Pay Day"
@@ -95,7 +96,9 @@ function addEntry() {
             document.getElementById("tr_Default_savings").style.display = "none"
             firstDate = dateStart
             insertTableData(dateStart, income, expenses, savings, invested)
+            
             document.getElementById("addDataDiv").style.display = "none"
+            document.getElementById("statsDivMain").style.display = "block"
             GetCellValues()
         }
     }
